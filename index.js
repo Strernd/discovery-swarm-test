@@ -1,8 +1,13 @@
 const { prompt } = require('enquirer');
+const discovery = require('dns-discovery')
+const server = ['195.63.103.144', '81.169.241.28'];
+const disc = discovery({
+    server
+})
 
 const swarm = require('discovery-swarm');
 
-const sw = swarm({ dht: false })
+const sw = swarm({ dht: false, dns: disc })
 const port = Math.round(Math.random() * 9000) + 999;
 
 const main = async () => {
