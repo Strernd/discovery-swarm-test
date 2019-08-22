@@ -57,7 +57,7 @@ log('Joined channel "tixl"');
 const connections = new Map();
 
 const handleIncoming = (id, data) => {
-    log(id.slice(0, 8), data);
+    log(id.slice(0, 8) + ":", data.message);
 }
 
 sw.on('peer', peer => {
