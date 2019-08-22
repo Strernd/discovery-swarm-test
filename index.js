@@ -18,6 +18,10 @@ const handleIncoming = (id, data) => {
     console.log(id, data);
 }
 
+sw.on('peer', peer => {
+    console.log('found peer ', peer.host, peer.port)
+})
+
 sw.on('connection', function (connection, info) {
     const id = info.id.toString('hex');
     connections.set(id, connection);
