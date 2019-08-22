@@ -1,5 +1,5 @@
 const { prompt } = require('enquirer');
-const server = ['https://ugly-wolverine-77.localtunnel.me'];
+const server = ['ugly-wolverine-77.localtunnel.me'];
 
 const swarm = require('discovery-swarm');
 
