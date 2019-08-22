@@ -34,7 +34,6 @@ sw.on('connection-closed', (connection, info) => {
     const id = info.id.toString('hex');
     console.log('Removed connection with id ', id.slice(0, 8))
     connection;
-    connections.delete(id);
 })
 const input = async () => {
     try {
