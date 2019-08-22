@@ -1,4 +1,4 @@
-const server = process.env.DNS || 'ec2-54-93-34-212.eu-central-1.compute.amazonaws.com:5300'
+const server = process.env.DNS;
 const swarm = require('discovery-swarm');
 const blessed = require('blessed');
 
@@ -32,7 +32,7 @@ const inputBar = blessed.textbox({
     inputOnFocus: true,
     style: {
         fg: 'white',
-        bg: 'blue'	// Blue background so you see this is different from body
+        bg: 'black'	// Blue background so you see this is different from body
     }
 });
 
@@ -51,7 +51,7 @@ const sw = swarm({
 const port = Math.round(Math.random() * 100) + 6666;
 log("Running on port " + port)
 sw.listen(port)
-sw.join('tixl') // can be any id/name/hash
+sw.join(process.env.CHANNEL || 'example') // can be any id/name/hash
 log('Joined channel "tixl"');
 
 const connections = new Map();
