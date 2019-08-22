@@ -15,7 +15,7 @@ console.log('Joined channel "tixl"');
 const connections = new Map();
 
 const handleIncoming = (id, data) => {
-    console.log(id, data);
+    console.log(id.slice(0, 8), data);
 }
 
 sw.on('peer', peer => {
@@ -25,14 +25,14 @@ sw.on('peer', peer => {
 sw.on('connection', function (connection, info) {
     const id = info.id.toString('hex');
     connections.set(id, connection);
-    console.log('Added connection with id ', id)
+    console.log('Added connection with id ', id.slice(0, 8))
     connection.on('data', chunk => handleIncoming(id, JSON.parse(chunk.toString())))
 })
 
 sw.on('connection-closed', (connection, info) => {
     if (!info || !info.id) return;
     const id = info.id.toString('hex');
-    console.log('Removed connection with id ', id)
+    console.log('Removed connection with id ', id.slice(0, 8))
     connection;
     connections.delete(id);
 })
