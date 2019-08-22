@@ -4,9 +4,7 @@ const server = ['195.63.103.144', '81.169.241.28'];
 const swarm = require('discovery-swarm');
 
 const sw = swarm({
-    dht: false, dns: {
-        server
-    }
+    dht: true, dns: false
 })
 const port = Math.round(Math.random() * 100) + 6666;
 console.log("Running on port " + port)
