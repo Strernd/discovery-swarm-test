@@ -10,6 +10,6 @@
   },
   "scripts": {
     "start": "node index.js",
-    "server": "dns-discovery listen --port=53 --ttl=30"
+    "server": "dns-discovery listen --port=5300 --ttl=30"
   }
 }

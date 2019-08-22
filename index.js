@@ -1,5 +1,5 @@
 const { prompt } = require('enquirer');
-const server = process.env.DNS || 'ec2-54-93-34-212.eu-central-1.compute.amazonaws.com:53'
+const server = process.env.DNS || 'ec2-54-93-34-212.eu-central-1.compute.amazonaws.com:5300'
 const swarm = require('discovery-swarm');
 
 const sw = swarm({
