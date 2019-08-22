@@ -1,6 +1,5 @@
 const { prompt } = require('enquirer');
-const server = ['sharp-insect-75.localtunnel.me:80','sharp-insect-75.localtunnel.me'];
-
+const server = process.env.DNS || 'ec2-54-93-34-212.eu-central-1.compute.amazonaws.com:53'
 const swarm = require('discovery-swarm');
 
 const sw = swarm({
