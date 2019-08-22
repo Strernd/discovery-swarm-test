@@ -52,7 +52,7 @@ const port = Math.round(Math.random() * 100) + 6666;
 log("Running on port " + port)
 sw.listen(port)
 sw.join(process.env.CHANNEL || 'example') // can be any id/name/hash
-log('Joined channel "tixl"');
+log('Joined channel', process.env.CHANNEL || 'example');
 
 const connections = new Map();
 
